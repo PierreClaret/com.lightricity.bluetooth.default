@@ -1,4 +1,4 @@
-package com.ruuvi.station.bluetooth.util;
+package com.lightricity.station.bluetooth.util;
 
 import android.app.Activity;
 import android.app.Application;

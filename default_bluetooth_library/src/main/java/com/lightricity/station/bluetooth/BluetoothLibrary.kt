@@ -1,8 +1,8 @@
-package com.ruuvi.station.bluetooth
+package com.lightricity.station.bluetooth
 
 import android.app.Application
-import com.ruuvi.station.bluetooth.decoder.LeScanResult
-import com.ruuvi.station.bluetooth.util.ScannerSettings
+import com.lightricity.station.bluetooth.decoder.LeScanResult
+import com.lightricity.station.bluetooth.util.ScannerSettings
 
 object BluetoothLibrary {
     internal lateinit var bluetoothInteractor: BluetoothInteractor

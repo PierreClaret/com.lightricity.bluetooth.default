@@ -1,4 +1,4 @@
-package com.ruuvi.station.bluetooth;
+package com.lightricity.station.bluetooth;
 
 
 import android.annotation.SuppressLint;

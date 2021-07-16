@@ -1,6 +1,6 @@
-package com.ruuvi.station.bluetooth.decoder;
+package com.lightricity.station.bluetooth.decoder;
 
-import com.ruuvi.station.bluetooth.FoundSensor;
+import com.lightricity.station.bluetooth.FoundSensor;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 

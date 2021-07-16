@@ -1,11 +1,11 @@
-package com.ruuvi.station.bluetooth.decoder;
+package com.lightricity.station.bluetooth.decoder;
 
 import android.bluetooth.BluetoothDevice;
 import com.neovisionaries.bluetooth.ble.advertising.ADManufacturerSpecific;
 import com.neovisionaries.bluetooth.ble.advertising.ADPayloadParser;
 import com.neovisionaries.bluetooth.ble.advertising.ADStructure;
 import com.neovisionaries.bluetooth.ble.advertising.EddystoneURL;
-import com.ruuvi.station.bluetooth.FoundSensor;
+import com.lightricity.station.bluetooth.FoundSensor;
 import java.io.ByteArrayOutputStream;
 import java.util.List;
 import timber.log.Timber;
@@ -43,7 +43,7 @@ public class LeScanResult {
                 // If the AD structure represents Eddystone TLM.
                 else if (structure instanceof ADManufacturerSpecific) {
                     ADManufacturerSpecific es = (ADManufacturerSpecific) structure;
-                    //Search for the ID company of ruuvi
+                    //Search for the ID company of lightricity
 
                     if (es.getCompanyId() == 0xA861 && this.scanData[7]==0x4D) {
                         tag = from(this.device.getAddress(), null, this.scanData, this.rssi);

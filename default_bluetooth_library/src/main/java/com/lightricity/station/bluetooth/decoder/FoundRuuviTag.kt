@@ -1,6 +1,6 @@
-package com.ruuvi.station.bluetooth.decoder
+package com.lightricity.station.bluetooth.decoder
 
-import com.ruuvi.station.bluetooth.FoundSensor
+import com.lightricity.station.bluetooth.FoundSensor
 
 const val TEMPERATURE_MINIMUM = -40.00
 const val TEMPERATURE_MAXIMUM = 85.00

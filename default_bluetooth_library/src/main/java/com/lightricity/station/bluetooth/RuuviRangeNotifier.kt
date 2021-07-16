@@ -1,4 +1,4 @@
-package com.ruuvi.station.bluetooth
+package com.lightricity.station.bluetooth
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
@@ -6,7 +6,7 @@ import android.bluetooth.BluetoothManager
 import android.bluetooth.le.*
 import android.content.Context
 import android.os.ParcelUuid
-import com.ruuvi.station.bluetooth.decoder.LeScanResult
+import com.lightricity.station.bluetooth.decoder.LeScanResult
 import timber.log.Timber
 import java.util.*
 import java.util.concurrent.atomic.AtomicBoolean

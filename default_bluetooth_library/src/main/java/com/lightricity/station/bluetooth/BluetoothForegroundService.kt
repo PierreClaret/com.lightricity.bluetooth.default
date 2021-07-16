@@ -1,4 +1,4 @@
-package com.ruuvi.station.bluetooth
+package com.lightricity.station.bluetooth
 
 import android.content.Intent
 import android.os.Build
@@ -9,7 +9,7 @@ import android.app.NotificationManager.IMPORTANCE_LOW
 import android.app.Service
 import android.os.Handler
 import androidx.core.app.NotificationCompat
-import com.ruuvi.station.bluetooth.util.ScannerSettings
+import com.lightricity.station.bluetooth.util.ScannerSettings
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein

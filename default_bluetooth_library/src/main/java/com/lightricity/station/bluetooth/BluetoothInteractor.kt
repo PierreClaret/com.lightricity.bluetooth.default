@@ -1,10 +1,10 @@
-package com.ruuvi.station.bluetooth
+package com.lightricity.station.bluetooth
 
 import android.app.Application
 import android.content.Intent
 import android.os.Build
-import com.ruuvi.station.bluetooth.util.Foreground
-import com.ruuvi.station.bluetooth.util.ScannerSettings
+import com.lightricity.station.bluetooth.util.Foreground
+import com.lightricity.station.bluetooth.util.ScannerSettings
 import timber.log.Timber
 import java.util.*
 
@@ -20,7 +20,7 @@ class BluetoothInteractor(
 
     private val listener: Foreground.Listener = object : Foreground.Listener {
         override fun onBecameForeground() {
-            Timber.d("ruuvi onBecameForeground start foreground scanning")
+            Timber.d("lightricity onBecameForeground start foreground scanning")
 
             isRunningInForeground = true
 
@@ -28,7 +28,7 @@ class BluetoothInteractor(
         }
 
         override fun onBecameBackground() {
-            Timber.d("ruuvi onBecameBackground start background scanning")
+            Timber.d("lightricity onBecameBackground start background scanning")
             stopScanning()
             isRunningInForeground = false
 
