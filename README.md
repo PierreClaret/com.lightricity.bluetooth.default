@@ -2,9 +2,11 @@
 Old Version to decode a specific format
 
 ### The specific format:
-https://github.com/PierreClaret/com.lightricity.bluetooth.default.V2/blob/master/Lightricity_Beacon_Format.pdf
+https://github.com/PierreClaret/com.lightricity.bluetooth.default/blob/main/Data%20format.xlsx
 
 # Usage example
+
+If you use the file Locally it is important to place them in the same folder as your ap project. If you have any doubt follow this tuto
 
 Add the JitPack repository to your projects build.gradle file
 ```gradle
@@ -28,8 +30,8 @@ dependencies {
 Define the project path in the settings.gradle file
 ```
 include ':default_bluetooth_library', ':MPChartLib',':bluetooth_library'
-project(':default_bluetooth_library').projectDir=new File('../com.lightricity.bluetooth.default.V2/default_bluetooth_library')
-project(':bluetooth_library').projectDir=new File('../com.lightricity.bluetooth.V2/bluetooth_library')
+project(':default_bluetooth_library').projectDir=new File('../com.lightricity.bluetooth.default/default_bluetooth_library')
+project(':bluetooth_library').projectDir=new File('../com.lightricity.bluetooth/bluetooth_library')
 include ':app'
 }
 ```
