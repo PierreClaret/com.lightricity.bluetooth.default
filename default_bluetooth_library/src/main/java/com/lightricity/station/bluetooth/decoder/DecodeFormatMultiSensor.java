@@ -20,7 +20,7 @@ public class DecodeFormatMultiSensor implements LeScanResult.RuuviTagDecoder {
                 tag.setTemperature((data[6 + offset] << 8 | data[5 + offset] & 0xFF) / 100d);
                 tag.setPressure((double) ((data[8 + offset] & 0xFF) << 8 | data[7 + offset] & 0xFF) / 0.5);
                 tag.setPressure(tag.getPressure() != null ? tag.getPressure() : 0.0);
-                tag.setHumidity(((data[10 + offset] & 0xFF) << 8 | data[9 + offset] & 0xFF) / 100d);
+                tag.setHumidity(((data[10 + offset] & 0xFF) << 8 | data[9 + offset] & 0xFF) / 1000d);
                 break;
             case 2:
                 tag.setBrand("BME 680 Bosch");

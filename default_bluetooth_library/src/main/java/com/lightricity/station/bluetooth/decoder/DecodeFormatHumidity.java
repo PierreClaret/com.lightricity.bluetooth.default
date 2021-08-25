@@ -17,7 +17,7 @@ public class DecodeFormatHumidity implements LeScanResult.RuuviTagDecoder {
         switch (decodeFormat) {
             case 1:
                 tag.setBrand("BME 280 Bosch");
-                tag.setHumidity(((data[10 + offset] & 0xFF) << 8 | data[9 + offset] & 0xFF) / 100d);
+                tag.setHumidity(((data[10 + offset] & 0xFF) << 8 | data[9 + offset] & 0xFF) / 1000d);
             break;
             case 2:
                 tag.setBrand("BME 680 Bosch");
@@ -28,9 +28,8 @@ public class DecodeFormatHumidity implements LeScanResult.RuuviTagDecoder {
         }
 
         // make it pretty
-        tag.setTemperature(round(tag.getTemperature() != null ? tag.getTemperature() : 0.0, 2));
         tag.setHumidity(round(tag.getHumidity() != null ? tag.getHumidity() : 0.0, 2));
-        tag.setPressure(round(tag.getPressure(), 2));
+
 
         return tag;
     }

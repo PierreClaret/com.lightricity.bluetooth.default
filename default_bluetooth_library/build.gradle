@@ -11,7 +11,7 @@ android {
         targetSdkVersion 30
         versionCode 10200
         versionName "1.2.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
 
@@ -36,8 +36,6 @@ def kodein_version = "6.5.0"
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation project(':bluetooth_library')
-
     implementation 'com.neovisionaries:nv-bluetooth:1.8'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -48,5 +46,5 @@ dependencies {
 
     implementation "org.kodein.di:kodein-di-generic-jvm:$kodein_version"
     implementation "org.kodein.di:kodein-di-framework-android-support:$kodein_version"
-    implementation project(path: ':bluetooth_library')
+    implementation project(':bluetooth_library')
 }

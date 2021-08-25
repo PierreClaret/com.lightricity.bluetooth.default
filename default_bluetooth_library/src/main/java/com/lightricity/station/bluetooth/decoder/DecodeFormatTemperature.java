@@ -28,9 +28,6 @@ public class DecodeFormatTemperature implements LeScanResult.RuuviTagDecoder {
 
         // make it pretty
         tag.setTemperature(round(tag.getTemperature() != null ? tag.getTemperature() : 0.0, 2));
-        tag.setHumidity(round(tag.getHumidity() != null ? tag.getHumidity() : 0.0, 2));
-        tag.setPressure(round(tag.getPressure(), 2));
-
         return tag;
     }
 
