@@ -45,7 +45,7 @@ public class LeScanResult {
                     ADManufacturerSpecific es = (ADManufacturerSpecific) structure;
                     //Search for the ID company of lightricity
 
-                    if (es.getCompanyId() == 0xA861 && this.scanData[7]==0x4D) {
+                    if (es.getCompanyId() == 0x0A96) {
                         tag = from(this.device.getAddress(), null, this.scanData, this.rssi);
                     }
                 }
@@ -64,42 +64,21 @@ public class LeScanResult {
             rawData = parseByteDataFromB64(data);
             decoder = new DecodeFormat2and4();
         } else if (rawData != null) {
-            int protocolVersion = rawData[PROTOCOL_OFFSET+1];
-            if (protocolVersion>=1 && protocolVersion<10){
-                decoder = new DecodeFormatTemperature();
-            }else if(protocolVersion>=10 && protocolVersion<20){
-                decoder = new DecodeFormatHumidity();
-            }else if(protocolVersion>=20 && protocolVersion<30){
-                decoder = new DecodeFormatPressure();
-            }else if(protocolVersion>=30 && protocolVersion<40) {
-                decoder = new DecodeFormatMultiSensor();
+            int FrameType = rawData[PROTOCOL_OFFSET];
+            switch (FrameType){
+                case 0: decoder=null;
+                break;
+                case 1: decoder= new decodeFrameType1();
+                break;
+                default : new decodeFrameType1();
             }
-
-                /*switch (protocolVersion) {
-                case 1:
-                    decoder = new DecodeFormatTemperature();
-                    break;
-                case 2:
-                    decoder = new DecodeFormatHumidity();
-                    break;
-                case 3:
-                    decoder = new DecodeFormatPressure();
-                    break;
-                case 4:
-                    decoder = new DecodeFormatMultiSensor();
-                    break;
-                case 5:
-                    decoder = new DecodeFormatMultiSensor2();
-                    break;
-                default:
-                    Timber.d("Unknown tag protocol version: %1$s (PROTOCOL_OFFSET: %2$s)", protocolVersion, PROTOCOL_OFFSET);
-            }*/
         }
+
         if (decoder != null) {
             FoundSensor tag = decoder.decode(rawData, PROTOCOL_OFFSET);
             if (tag != null) {
                 tag.setId(id);
-                tag.setSensorID(rawData[PROTOCOL_OFFSET+3]+rawData[PROTOCOL_OFFSET+4]);
+                tag.setFrame((int) rawData[PROTOCOL_OFFSET]);
                 tag.setUrl(url);
                 tag.setRssi(rssi);
             }

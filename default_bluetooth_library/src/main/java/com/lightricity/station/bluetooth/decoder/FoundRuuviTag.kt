@@ -28,6 +28,26 @@ fun validateValues(tag: FoundSensor) : FoundSensor{
         if (it !in PRESSURE_MINIMUM..PRESSURE_MAXIMUM) tag.pressure = null
     }
 
+    tag.light?.let {
+        if (it !in PRESSURE_MINIMUM..PRESSURE_MAXIMUM) tag.light = null
+    }
+
+    tag.sound?.let {
+        if (it !in PRESSURE_MINIMUM..PRESSURE_MAXIMUM) tag.sound = null
+    }
+
+    tag.accelX?.let {
+        if (it !in PRESSURE_MINIMUM..PRESSURE_MAXIMUM) tag.accelX = null
+    }
+
+    tag.accelY?.let {
+        if (it !in PRESSURE_MINIMUM..PRESSURE_MAXIMUM) tag.accelY = null
+    }
+
+    tag.accelZ?.let {
+        if (it !in PRESSURE_MINIMUM..PRESSURE_MAXIMUM) tag.accelZ = null
+    }
+
 
     tag.txPower?.let {
         if (it !in TX_POWER_MINIMUM..TX_POWER_MAXIMUM) tag.txPower = null
