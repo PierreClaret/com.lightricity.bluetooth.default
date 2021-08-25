@@ -6,7 +6,8 @@ https://github.com/PierreClaret/com.lightricity.bluetooth.default/blob/main/Data
 
 # Usage example
 
-If you use the file Locally it is important to place them in the same folder as your ap project. If you have any doubt follow this tuto
+If you use the file Locally it is important to place them in the same folder as your ap project. If you have any doubt follow this tuto https://lightricity.sharepoint.com/:w:/r/sites/LightricityStudentSite/_layouts/15/Doc.aspx?sourcedoc=%7BE1DAECE2-56F4-4CF7-9CEA-53C4E6D1879A%7D&file=Android%20studio%20Installation.docx&action=default&mobileredirect=true
+
 
 Add the JitPack repository to your projects build.gradle file
 ```gradle
