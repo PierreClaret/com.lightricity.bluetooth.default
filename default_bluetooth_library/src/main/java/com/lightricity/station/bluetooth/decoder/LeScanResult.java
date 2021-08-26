@@ -68,15 +68,6 @@ public class LeScanResult {
                 decoder = new DecodeFormatNoModzee();
             } else {
                 int protocolVersion = rawData[PROTOCOL_OFFSET + 1];
-           /* if (protocolVersion>=1 && protocolVersion<10){
-                decoder = new DecodeFormatTemperature();
-            }else if(protocolVersion>=10 && protocolVersion<20){
-                decoder = new DecodeFormatHumidity();
-            }else if(protocolVersion>=20 && protocolVersion<30){
-                decoder = new DecodeFormatPressure();
-            }else if(protocolVersion>=30 && protocolVersion<40) {
-                decoder = new DecodeFormatMultiSensor();
-            }*/
 
                 switch (protocolVersion) {
                     case 1:
